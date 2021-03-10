@@ -21,6 +21,8 @@ spec:
       {{ if .ProvisionerPriorityClassName }}
       priorityClassName: {{ .ProvisionerPriorityClassName }}
       {{ end }}
+      imagePullSecrets:
+        - name: aliyuncs-registry
       containers:
         - name: csi-attacher
           image: {{ .AttacherImage }}
